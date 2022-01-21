@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-color: #FED4B6;
+}
+
+body{
+    background-color: var(--bg-color)
+}
+
+header{
+    text-align: center;
+}
+
+a{
+    text-align: center;
+}
+
+div #container{
+    margin: auto;
+}

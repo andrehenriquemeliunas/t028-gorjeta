@@ -9,35 +9,39 @@
 </head>
 <body>
     <header>
-        <h1>Calculadora de Gorjeta</h1>
+        <h1>Calculadora de Jantar e Gorjeta</h1>
     </header>
     <nav>
-        <a href="">Saiba Mais</a>
+        <a href="https://andrehenriquemeliunas.github.io/t026-portfolio-programador/" target="_blank">Saiba Mais</a>
     </nav>
-    <main>
-        <div id="content">
-            Valor da conta:
-            <input type="number" name="valor" id="valor" min="0" placeholder="Digite o valor da conta aqui.">
-
-            <p>Qualidade do Serviço</p>
-            <input type="radio" name="radqua" id="otimo" checked>
-            <label for="otimo" >Ótimo</label>
-
-            <input type="radio" name="radqua" id="bom">
-            <label for="bom" >Bom</label>
-
-            <input type="radio" name="radqua" id="reg">
-            <label for="reg" >Regular</label>
-
-            <br>
-            <input type="button" value="Calcular" onclick="Calcular()" id="botao">
+    <div id="container">
+        <div id="calculator">
+            <form>
+            <p>Quanto custou o jantar?<p>
+            R$ <input id="total-conta" type="text" placeholder="Total da conta">
+            <p>Qual a taxa de serviço?<p>
+            <select id="taxa-servico">
+                <option disabled selected value="0">-- Defina a Taxa --</option>
+                <option value="0.3">30% - Taxa de serviço ótima</option>
+                <option value="0.2">20% - Taxa de serviço</option>
+                <option value="0.1">10% - Taxa de serviço boa</option>
+                <option value="0.05">5% - Taxa de serviço ruim</option>
+            </select>
+            </form>
+            <p>Quantas pessoas vão dividir a conta?</p>
+            <input id="numero-pessoas" type="text" placeholder="Número de pessoas"> pessoas
+            <button type="button" id="calcular">Calcular!</button>
         </div>
-        <div id="resultado">
-
+        <!--Resultados-->
+        <div id="valor-calculado">
+            <sup>R$</sup><span id="valor-por-cabeca">0.00</span>
+            <small id="each">cada</small>
         </div>
-    </main>
+        <!--Resultados-->
+    </div>
+
     <footer>
-
+        <p>&copy; Desenvoldio por <span>André Henrique</span> - 2022</p>
     </footer>
     <script src="js/script.js"></script>
 </body>

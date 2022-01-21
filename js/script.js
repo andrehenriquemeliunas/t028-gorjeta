@@ -1,20 +1,33 @@
-function Calcular(){
-    var valor = document.getElementById('valor')
-    var resultado = document.getElementById('resultado')
+document.getElementById("valor-calculado").style.display = "none";
+document.getElementById("each").style.display = "none";
 
-    if(valor.value.length == 0){
-        alert('Verifique os dados e tente novamente.')
-    }else{
-        var qualidade = document.getElementsByName('radqua')
-        var escolhaQualidade = ''
-        var percentualOtimo = 0.2
-        var gorjeta0 = valor * percentualOtimo
+function calculateDinner(){
+    var totalConta = document.getElementById("total-conta").value;
+    var taxaServico = document.getElementById("taxa-servico").value;
+    var numeroPessoas = document.getElementById("numero-pessoas").value;
 
-        if(radqua[0].checked){
-            escolhaQualidade = 'otimo'
-            if(gorjeta0 > 10){
-                resultado.innerHTML = 'Deu certo!'
-            }
-        }
+    if(totalConta === "" || taxaServico == 0 || isNaN(totalConta) || isNaN(numeroPessoas)){
+        alert("Por favor, coloque um valor válido!");
+        return;
     }
+
+    if (numeroPessoas === "" || numeroPessoas <= 1){
+        numeroPessoas = 1;
+        document.getElementById("each").style.display = "none"
+    } else {
+        document.getElementById("each").style.display = "block"
+    }
+
+    var totalTaxaServico = (totalConta * taxaServico) / numeroPessoas;
+    var total = totalTaxaServico + (totalConta / numeroPessoas);
+
+    total = Math.round(total * 100) / 100;
+    total = total.toFixed(2);
+
+    document.getElementById("valor-calculado").style.display = "block";
+    document.getElementById("valor-por-cabeca").innerHTML = total;
+}
+
+document.getElementById("calcular").onclick = function(){
+    calculateDinner();
 }

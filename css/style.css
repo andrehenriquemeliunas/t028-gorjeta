@@ -8,17 +8,31 @@
 }
 
 body{
-    background-color: var(--bg-color)
+    background-color: var(--bg-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
     text-align: center;
 }
 
-a{
+header > h1{
+    margin: 25px;
+    letter-spacing: 1px;
+
+}
+
+nav{
     text-align: center;
 }
 
-div #container{
+
+
+#calculator{
     margin: auto;
+    padding: 15px;
+}
+
+footer{
+    text-align: center;
 }

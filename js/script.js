@@ -15,7 +15,7 @@ function calculateDinner(){
         numeroPessoas = 1;
         document.getElementById("each").style.display = "none"
     } else {
-        document.getElementById("each").style.display = "block"
+        document.getElementById("each").style.display = "inline-block"
     }
 
     var totalTaxaServico = (totalConta * taxaServico) / numeroPessoas;
